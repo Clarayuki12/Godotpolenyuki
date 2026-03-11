@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dw6b4copraddy"]
+
+[ext_resource type="AudioStream" path="res://Audios/dragon-studio-button-press-382713.mp3" id="1_44msx"]
+
+[node name="sonidoBoton" type="AudioStreamPlayer2D" unique_id=770579165]
+stream = ExtResource("1_44msx")
