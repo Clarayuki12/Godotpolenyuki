@@ -6,3 +6,4 @@ func _on_area_2d_input_event(_viewport, event, _shape_idx) -> void:
 	# This is just a test function for the Button Example
 	if event.is_action_pressed("left_mouse") and office.can_move:
 		print('Button Pressed !')
+		$AudioStreamPlayer.play()

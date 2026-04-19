@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cyt78opurb0y6" path="res://Scripts/Nights/tablet_manager.gd" id="5_h71ec"]
 [ext_resource type="Script" uid="uid://n6xetcvp8tiv" path="res://Scripts/Nights/Office/button_scroll.gd" id="5_hvcnl"]
 [ext_resource type="Texture2D" uid="uid://bwp12gkddlnns" path="res://Graphics/Tablet/tablet_anim.png" id="6_1oog2"]
+[ext_resource type="AudioStream" uid="uid://c8kad5lwfmtvc" path="res://Audios/dragon-studio-button-press-382713.mp3" id="6_fbex5"]
 [ext_resource type="Texture2D" uid="uid://nhd5vjnlj5y8" path="res://Graphics/HUD/cam_barbutton.png" id="7_vtngn"]
 [ext_resource type="Script" uid="uid://dfi1a5gobjhxm" path="res://Scripts/Nights/Camera/Setups/default_setup.gd" id="8_a3j08"]
 [ext_resource type="Texture2D" uid="uid://di62ngt3q4476" path="res://Graphics/CamRooms/room1.png" id="10_4532e"]
@@ -22,7 +23,7 @@
 [ext_resource type="Script" uid="uid://c8etmv2lj5mg7" path="res://Scripts/Nights/AI/Characters/red_ai.gd" id="20_h065c"]
 [ext_resource type="Shader" uid="uid://b7sl4psypgsnm" path="res://Shaders/equirectangular_perspective.gdshader" id="20_obh0f"]
 [ext_resource type="Script" uid="uid://cgcqgc6ecwo8t" path="res://Scripts/Nights/AI/Characters/green_ai.gd" id="21_ujdr3"]
-[ext_resource type="PackedScene" uid="uid://dw6b4copraddy" path="res://Audios/sonido_boton.tscn" id="23_xn6a7"]
+[ext_resource type="AudioStream" uid="uid://d2kwrwkk5egua" path="res://Audios/open-close-cam.mp3" id="23_xn6a7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0qos"]
 size = Vector2(258, 248)
@@ -345,8 +346,6 @@ shader_parameter/stretch = Vector2(54, 27)
 
 [node name="Nights" type="Node" unique_id=1722971519]
 
-[node name="sonidoBoton" parent="." unique_id=770579165 instance=ExtResource("23_xn6a7")]
-
 [node name="OfficeElements" type="Node" parent="." unique_id=938061930]
 script = ExtResource("1_pp75g")
 
@@ -407,6 +406,10 @@ z_index = 50
 position = Vector2(1, -4)
 shape = SubResource("RectangleShape2D_a0qos")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="OfficeElements" unique_id=477326632]
+stream = ExtResource("6_fbex5")
+script = ExtResource("1_pp75g")
+
 [node name="TabletElements" type="Node2D" parent="." unique_id=368574339 node_paths=PackedStringArray("camera", "office")]
 z_index = 15
 position = Vector2(960, 540)
@@ -435,6 +438,9 @@ offset_bottom = 361.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("7_vtngn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TabletElements" unique_id=575971145]
+stream = ExtResource("23_xn6a7")
 
 [node name="CameraElements" type="Node2D" parent="." unique_id=1530483995]
 visible = false

@@ -14,6 +14,7 @@ var tweener: Tween
 
 func _on_tablet_button_click() -> void:
 	# This function handles if the tablet animation should be played fowards or backwards
+	$AudioStreamPlayer.play()
 	if not is_tablet_up:
 		tablet_sprite.play("lift")
 		tablet_sprite.visible = true
